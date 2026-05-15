@@ -12,7 +12,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 - **🏆 Certifications:** Minhas conquistas, validações oficiais do mercado.
 - **📬 Contact:** Meus canais de comunicação abertos para conexões profissionais e oportunidades.
 
-<br>
+## <br>
 
 ## 🔗 Link do Site
 
@@ -22,13 +22,13 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
   </a>
 </p>
 
-<br>
+## <br>
 
 ## 📸 Demonstração Visual
 
-![Screenshot do Portfólio](gift-isadora.gif)
+![Screenshot do Portfólio](video.gif)
 
-<br>
+## <br>
 
 ## 🛠️ Tecnologias e Recursos Técnicos
 
@@ -37,7 +37,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 - **Tipografia Digital:** Integração com Google Fonts utilizando as famílias _Outfit_ e _Inter_.
 - **Design Responsivo:** Layout adaptável para dispositivos móveis, tablets e telas largas via funções `clamp()`.
 
-<br>
+## <br>
 
 ## ✨ Diferenciais de Código e Design (Features)
 
@@ -46,30 +46,15 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 - 🫧 **Glassmorphism UI:** Menu de navegação fixo com efeito de vidro fosco utilizando a propriedade `backdrop-filter: blur()`.
 - 🚀 **Performance Otimizada:** Sem frameworks ou bibliotecas pesadas de terceiros, garantindo renderização quase instantânea.
 
----
+## <br>
 
 ## 🚀 Como visualizar o projeto localmente
 
 Como o portfólio foi feito puramente com tecnologias web nativas, você não precisa instalar nenhuma dependência do Node.js.
 
-1. **Clone este repositório:**
-
-   ```bash
-   git clone https://github.com
-   ```
-
-2. **Navegue até a pasta:**
-
-   ```bash
-   cd SEU_REPOSITORIO
-   ```
-
-3. **Abra o arquivo principal:**
-   Basta dar um duplo clique no arquivo `index.html` ou utilizar a extensão **Live Server** no VS Code para rodar o ambiente local.
-
----
+## <br>
 
 ## 📬 Contato e Redes Sociais
 
-- **LinkedIn:** [Seu Nome Completo](https://linkedin.com)
-- **E-mail:** seu.email@provedor.com
+- **LinkedIn:** [Seu Nome Completo](https://www.linkedin.com/in/isadoravanderlan/)
+- **E-mail:** vanderlansantos1991@gmail.com
