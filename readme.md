@@ -23,8 +23,8 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 # 🔗 Link do Site
 
 <p align="left">
-  <a href="https://isadoravanderlan.github.io/portfolio-isadora-vanderlan/" target="_blank" style="padding: 5px 5px; background-color: #cc0069; color: Black; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block;">
-    💻 Site Portfólio Cloud Security 
+  <a href="https://isadoravanderlan.github.io/portfolio-isadora-vanderlan/" target="_blank">
+    <img src="URL_DO_SEU_GIF.gif" alt="Site Portfólio Cloud Security" style="border: 2px solid #30363d; border-radius: 6px;" />
   </a>
 </p>
 
