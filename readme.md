@@ -4,7 +4,7 @@
 
 ---
 
-## 📝 Descrição do Projeto
+📝 Descrição do Projeto
 
 Este é o meu portfólio profissional focado em **Cloud Security**. O objetivo deste espaço é centralizar e demonstrar minhas competências técnicas, projetos práticos e minha evolução na proteção de ambientes em nuvem.
 
@@ -20,7 +20,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ---
 
-## 🔗 Link do Site
+🔗 Link do Site
 
 <p align="left">
   <a href="https://isadoravanderlan.github.io/portfolio-isadora-vanderlan/" target="_blank" style="padding: 5px 5px; background-color: #0052CC; color: Black; text-decoration: none; border-radius: 15px; font-weight: bold; display: inline-block;">
@@ -32,7 +32,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ---
 
-## 📸 Demonstração Visual
+📸 Demonstração Visual
 
 <table>
   <tr>
@@ -46,7 +46,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ---
 
-## 🛠️ Tecnologias e Recursos Técnicos
+.. 🛠️ Tecnologias e Recursos Técnicos
 
 - **Linguagem Estrutural:** HTML5 semântico.
 - **Estilização Avançada:** CSS3 puro utilizando variáveis nativas (`:root`), Flexbox e CSS Grid Layout.
@@ -57,7 +57,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ---
 
-## ✨ Diferenciais de Código e Design (Features)
+✨ Diferenciais de Código e Design (Features)
 
 - 🔮 **Aurora Glow Background:** Fundo contínuo estilizado com camadas sobrepostas de `radial-gradient` fixos e uma malha sutil de linhas (`subtle grid pattern`).
 - ✨ **Animações Fluidas:** Efeito flutuante em orbes decorativos abstratos utilizando `@keyframes` e transições de opacidade por pulso.
@@ -68,7 +68,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ---
 
-## 📬 Contato e Redes Sociais
+📬 Contato e Redes Sociais
 
 - **LinkedIn:** [Seu Nome Completo](https://www.linkedin.com/in/isadoravanderlan/)
 - **E-mail:** vanderlansantos1991@gmail.com
