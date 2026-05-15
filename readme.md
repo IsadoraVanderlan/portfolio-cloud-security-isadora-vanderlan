@@ -12,7 +12,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 - **🏆 Certifications:** Minhas conquistas, validações oficiais do mercado.
 - **📬 Contact:** Meus canais de comunicação abertos para conexões profissionais e oportunidades.
 
-### <br>
+## <br>
 
 ---
 
@@ -26,6 +26,8 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ## <br>
 
+---
+
 ## 📸 Demonstração Visual
 
 <table>
@@ -38,6 +40,8 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ## <br>
 
+---
+
 ## 🛠️ Tecnologias e Recursos Técnicos
 
 - **Linguagem Estrutural:** HTML5 semântico.
@@ -46,6 +50,8 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 - **Design Responsivo:** Layout adaptável para dispositivos móveis, tablets e telas largas via funções `clamp()`.
 
 ## <br>
+
+---
 
 ## ✨ Diferenciais de Código e Design (Features)
 
@@ -56,11 +62,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ## <br>
 
-## 🚀 Como visualizar o projeto localmente
-
-Como o portfólio foi feito puramente com tecnologias web nativas, você não precisa instalar nenhuma dependência do Node.js.
-
-## <br>
+---
 
 ## 📬 Contato e Redes Sociais
 
