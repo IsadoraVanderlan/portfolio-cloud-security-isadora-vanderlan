@@ -26,7 +26,13 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ## 📸 Demonstração Visual
 
-![Screenshot do Portfólio](video.gif)
+<table>
+  <tr>
+    <td style="background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 4px;">
+      <img src="video.gif" alt="Demonstração do Portfólio" width="100%">
+    </td>
+  </tr>
+</table>
 
 ## <br>
 
