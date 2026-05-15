@@ -1,5 +1,9 @@
 # Site Portifolio Cloud Security - Isadora Vanderlan
 
+<br>
+
+---
+
 ## 📝 Descrição do Projeto
 
 Este é o meu portfólio profissional focado em **Cloud Security**. O objetivo deste espaço é centralizar e demonstrar minhas competências técnicas, projetos práticos e minha evolução na proteção de ambientes em nuvem.
@@ -12,19 +16,19 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 - **🏆 Certifications:** Minhas conquistas, validações oficiais do mercado.
 - **📬 Contact:** Meus canais de comunicação abertos para conexões profissionais e oportunidades.
 
-## <br>
+<br>
 
 ---
 
 ## 🔗 Link do Site
 
 <p align="left">
-  <a href="https://isadoravanderlan.github.io/portfolio-isadora-vanderlan/" target="_blank" style="padding: 10px 20px; background-color: #0052CC; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">
+  <a href="https://isadoravanderlan.github.io/portfolio-isadora-vanderlan/" target="_blank" style="padding: 5px 5px; background-color: #0052CC; color: Black; text-decoration: none; border-radius: 15px; font-weight: bold; display: inline-block;">
     💻 Site Portfólio Cloud Security 
   </a>
 </p>
 
-## <br>
+<br>
 
 ---
 
@@ -38,7 +42,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
   </tr>
 </table>
 
-## <br>
+<br>
 
 ---
 
@@ -49,7 +53,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 - **Tipografia Digital:** Integração com Google Fonts utilizando as famílias _Outfit_ e _Inter_.
 - **Design Responsivo:** Layout adaptável para dispositivos móveis, tablets e telas largas via funções `clamp()`.
 
-## <br>
+<br>
 
 ---
 
@@ -60,7 +64,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 - 🫧 **Glassmorphism UI:** Menu de navegação fixo com efeito de vidro fosco utilizando a propriedade `backdrop-filter: blur()`.
 - 🚀 **Performance Otimizada:** Sem frameworks ou bibliotecas pesadas de terceiros, garantindo renderização quase instantânea.
 
-## <br>
+<br>
 
 ---
 
