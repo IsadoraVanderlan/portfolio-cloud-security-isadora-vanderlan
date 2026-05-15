@@ -12,7 +12,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 - **🏆 Certifications:** Minhas conquistas, validações oficiais do mercado.
 - **📬 Contact:** Meus canais de comunicação abertos para conexões profissionais e oportunidades.
 
-## <br>
+### <br>
 
 ## 🔗 Link do Site
 
