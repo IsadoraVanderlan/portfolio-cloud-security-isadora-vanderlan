@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Isadora</title>
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="favicon-32x32.png?v=2">
+
+  <style>
+    :root {
+      --purple: #6c3fc5;
+      --purple-mid: #8b5cf6;
+      --purple-light: #a78bfa;
+      --accent: #e879f9;
+      --text: #ede8f7;
+      --text-muted: #9d8ec4;
+      --border: rgba(139, 92, 246, 0.18);
+      --card: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(139, 92, 246, 0.22);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #07050f;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Fixed full-page gradient — single continuous background */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 75% 8%, rgba(108, 63, 197, 0.32) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 15% 50%, rgba(232, 121, 249, 0.12) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 50% 90%, rgba(108, 63, 197, 0.18) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Subtle grid across entire page */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav,
+    .page-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2.5rem;
+      background: rgba(7, 5, 15, 0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    .nav-logo {
+      width: 36px;
+      height: 36px;
+      background: var(--purple);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-muted);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ── LAYOUT ── */
+    .inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .section {
+      padding: 6rem 0;
+    }
+
+    .section-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      color: var(--purple-light);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 640px;
+      margin-bottom: 3rem;
+      font-weight: 400;
+    }
+
+    /* ── BUTTONS ── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--purple);
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      transition: all 0.25s;
+      box-shadow: 0 4px 28px rgba(108, 63, 197, 0.45);
+    }
+
+    .btn-primary:hover {
+      background: var(--purple-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 36px rgba(108, 63, 197, 0.55);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--text);
+      padding: 0.8rem 1.6rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      font-family: 'Outfit', sans-serif;
+      transition: all 0.25s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--purple-light);
+      color: var(--purple-light);
+      transform: translateY(-2px);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      animation: float 9s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .orb-1 {
+      width: 360px;
+      height: 360px;
+      background: rgba(108, 63, 197, 0.28);
+      top: 5%;
+      right: -2%;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 220px;
+      height: 220px;
+      background: rgba(232, 121, 249, 0.18);
+      top: 45%;
+      right: 18%;
+      animation-delay: 3s;
+    }
+
+    .orb-3 {
+      width: 160px;
+      height: 160px;
+      background: rgba(139, 92, 246, 0.22);
+      top: 20%;
+      right: 38%;
+      animation-delay: 5.5s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-24px) scale(1.06);
+      }
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.13em;
+      color: var(--purple-light);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+      background: rgba(108, 63, 197, 0.08);
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.35;
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(135deg, #fff 0%, var(--purple-light) 55%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2.75rem;
+      font-weight: 400;
+      max-width: 520px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 3rem;
+    }
+
+    .skill-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .skill-icon {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      background: rgba(108, 63, 197, 0.12);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+    }
+
+    .skill-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .skill-item p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── WATSON ── */
+    .feature-tags {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 2rem;
+    }
+
+    .feature-tag {
+      background: rgba(108, 63, 197, 0.1);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.1rem 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.25s;
+      cursor: default;
+    }
+
+    .feature-tag:hover {
+      background: rgba(108, 63, 197, 0.22);
+      border-color: var(--purple-light);
+    }
+
+    .feature-tag span {
+      font-size: 1.15rem;
+    }
+
+    /* ── ARCHITECTURE ── */
+    .arch-diagram {
+      margin-top: 2.5rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .arch-label-row {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .arch-badge {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      border: 1px solid rgba(139, 92, 246, 0.4);
+      color: var(--purple-light);
+      background: rgba(108, 63, 197, 0.1);
+    }
+
+    .arch-svg-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .arch-svg-wrap svg {
+      width: 100%;
+      max-width: 520px;
+    }
+
+    .arch-note {
+      margin-top: 1.75rem;
+      display: flex;
+      gap: 0.75rem;
+      background: rgba(108, 63, 197, 0.07);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .arch-note .info {
+      color: var(--purple-light);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* ── CERTS ── */
+    .cert-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .cert-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      backdrop-filter: blur(4px);
+    }
+
+    .cert-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+    }
+
+    .cert-card p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .cert-card .check {
+      color: #4ade80;
+    }
+
+    .cert-card .prog {
+      color: var(--accent);
+    }
+
+    /* Stepper */
+    .stepper {
+      display: flex;
+      align-items: flex-start;
+      margin: 2rem 0;
+    }
+
+    .step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--purple), rgba(108, 63, 197, 0.25));
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--purple);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0.8rem;
+      box-shadow: 0 0 0 5px rgba(108, 63, 197, 0.18);
+    }
+
+    .step-num.dim {
+      background: rgba(108, 63, 197, 0.15);
+      border: 2px solid rgba(139, 92, 246, 0.35);
+      color: var(--text-muted);
+      box-shadow: none;
+    }
+
+    .step-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text-muted);
+    }
+
+    .step-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .step-sub.ok {
+      color: #4ade80;
+    }
+
+    .step-sub.wip {
+      color: var(--accent);
+    }
+
+    /* Stats */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.75rem 1.25rem;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .stat-num {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--purple-light), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ── CONTACT ── */
+    .contact-wrap {
+      text-align: center;
+    }
+
+    .contact-wrap>p {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+      max-width: 560px;
+      margin: 0 auto 2.75rem;
+    }
+
+    .contact-links {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      text-align: left;
+      margin-bottom: 2.75rem;
+    }
+
+    .contact-link-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .contact-link-item h4 {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      gap: 0.35rem;
+    }
+
+    .contact-link-item p {
+      font-size: 0.88rem;
+    }
+
+    .contact-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(7, 5, 15, 0.97);
+        border-bottom: 1px solid var(--border);
+        padding: 1.5rem;
+        gap: 1.25rem;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .inner {
+        padding: 0 1.5rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .hero {
+        padding: 7rem 0 4rem;
+      }
+
+      .orb-1 {
+        width: 240px;
+        height: 240px;
+        right: -10%;
+      }
+
+      .orb-2 {
+        width: 160px;
+        height: 160px;
+      }
+
+      .orb-3 {
+        display: none;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+      }
+
+      .feature-tags {
+        grid-template-columns: 1fr;
+      }
+
+      .cert-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        grid-template-columns: 1fr;
+      }
+
+      .arch-diagram {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .stats-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+      }
+
+      .stat-card {
+        padding: 1.25rem 0.75rem;
+      }
+
+      .stat-num {
+        font-size: 2rem;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero {
+        height: auto !important;
+        min-height: auto !important;
+        padding: 120px 20px 60px 20px !important;
+      }
+
+      .hero-content {
+        text-align: center !important;
+        margin: 0 auto !important;
+      }
+
+      .hero-btns {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+        margin-top: 25px !important;
+      }
+
+      .btn-primary,
+      .btn-outline {
+        width: 100% !important;
+        max-width: 260px !important;
+        padding: 14px 0 !important;
+      }
+
+      h1 {
+        font-size: 1.8rem !important;
+        margin-bottom: 15px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo-novo" style="display: flex !important; align-items: center !important; gap: 10px !important; background: none !important; border: none !important; width: auto !important; height: auto !important; padding: 0 !important; cursor: pointer;">
+      <!-- Ícone de Escudo Tech -->
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org" style="display: block;">
+        <!-- Substitua as linhas 849 e 850 por estas três: -->
+        <path d="M12 2L3 7V12C3 17.5 7 21.5 12 22C17 21.5 21 17.5 21 12V7L12 2Z" stroke="#A78BFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="rgba(139,92,246,0.2)"></path>
+        <path d="M8.5 10V15" stroke="#EDE8F7" stroke-width="2" stroke-linecap="round" />
+        <path d="M11.5 10L14 15L16.5 10" stroke="#EDE8F7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+      </svg>
+      <!-- Suas iniciais -->
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#watson">Project</a></li>
+      <li><a href="#arch">Architecture</a></li>
+      <li><a href="#certs">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-hamburger" id="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="page-content">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="inner">
+        <span class="hero-tag">Cloud Security Enthusiast • AWS Cloud Practitioner em progresso • Escola da Nuvem</span>
+        <h1>Isadora Vanderlan - Cloud Security</h1>
+        <p class="hero-subtitle">Especializando em Cloud na Escola da Nuvem. Atualmente focada em arquiteturas seguras na AWS e governança de dados.</p>
+        <div class="hero-btns">
+          <a href="https://www.linkedin.com/in/isadoravanderlan/" class="btn-primary">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            Connect on LinkedIn
+          </a>
+          <a href="#arch" class="btn-outline">View Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section fade-up" id="skills">
+      <div class="inner">
+        <span class="section-label">Skills</span>
+        <h2>Matriz de Competências Técnicas</h2>
+        <p class="section-desc">EEm transição do ERP Protheus para Cloud Security na AWS. Especializando-me na Escola da Nuvem com foco em IAM, proteção de dados e automação de infraestrutura segura.</p>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-icon">☁</div>
+            <div>
+              <h3>Serviços principais da AWS</h3>
+              <p>S3, CloudFront, Lambda, EC2, RDS, IAM, VPC — projetados, implementados e monitorados em ambientes semelhantes aos de produção.</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">🤖</div>
+            <div>
+              <h3>Automação de Segurança (SecOps)</h3>
+              <p>Uso de automação para monitorar desvios de padrão e garantir a segurança contínua do ambiente de forma ágil e eficiente.</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">⚙</div>
+            <div>
+              <h3>Infraestrutura como código</h3>
+              <p>Terraform e AWS CloudFormation para provisionamento e gerenciamento de infraestrutura declarativa e com controle de versão.</p>
+            </div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-icon">🔒</div>
+            <div>
+              <h3>Segurança na nuvem</h3>
+              <p>Políticas de IAM, grupos de segurança, criptografia em repouso e em trânsito, e design de arquitetura com foco em conformidade.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJETOS -->
+    <div class="section fade-up" id="watson">
+      <div class="inner">
+        <span class="section-label">Projects</span>
+        <h2>Meus Projetos</h2>
+        <p class="section-desc">Laboratório pessoal <strong style="color:var(--purple-light);font-weight:600"> de Cloud Security: documentação de estudos e automações para segurança na AWS, explorando desde a gestão de identidades até o monitoramento proativo de recursos.</p>
+        <div class="feature-tags">
+          <div class="feature-tag"><span>🐍</span> Automação com Python (Boto3) </div>
+          <div class="feature-tag"><span>🐧</span> Programação em Shell (Bash) </div>
+          <div class="feature-tag"><span>🏗️</span> Infraestrutura como Código (Terraform)</div>
+          <div class="feature-tag"><span>🔍</span> Monitoramento e Logs (CloudWatch/CloudTrail) </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ARCHITECTURE -->
+    <div class="section fade-up" id="arch">
+      <div class="inner">
+        <span class="section-label">Architecture</span>
+        <h2>Arquitetura do Projeto</h2>
+        <p class="section-desc">Este diagrama representa a estrutura profissional que sustenta meu portfólio na AWS. Utilizo Terraform para garantir que toda essa infraestrutura seja criada de forma organizada, segura e fácil de replicar.</p>
+
+        <div class="arch-diagram" style="width: 100%; max-width: 800px; margin: 0 auto; background: rgba(20, 15, 35, 0.4); padding: 30px; border-radius: 20px; border: 1px solid rgba(167, 139, 250, 0.2);">
+          <svg viewBox="0 0 600 350" xmlns="http://w3.org" style="width: 100%; height: auto;">
+
+            <!-- Definição da Seta (Marcador) -->
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+                <path d="M0,0 L10,5 L0,10 Z" fill="rgba(167, 139, 250, 0.6)" />
+              </marker>
+            </defs>
+
+            <!-- USER -->
+            <g transform="translate(10, 130)">
+              <rect width="80" height="70" rx="12" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+              <text x="40" y="35" text-anchor="middle" font-size="25">💻</text>
+              <text x="40" y="58" text-anchor="middle" font-size="11" fill="#fff" font-family="sans-serif">User</text>
+            </g>
+
+            <!-- Route 53 -->
+            <g transform="translate(140, 130)">
+              <circle cx="40" cy="35" r="35" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+              <text x="40" y="32" text-anchor="middle" font-size="22">🌐</text>
+              <text x="40" y="55" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif" font-weight="bold">Route 53</text>
+            </g>
+
+            <!-- CloudFront (O Centro) -->
+            <g transform="translate(270, 120)">
+              <rect width="100" height="90" rx="15" fill="rgba(139, 92, 246, 0.25)" stroke="#a78bfa" stroke-width="2" />
+              <text x="50" y="40" text-anchor="middle" font-size="28">☁️</text>
+              <text x="50" y="65" text-anchor="middle" font-size="11" fill="#fff" font-family="sans-serif" font-weight="bold">CloudFront</text>
+              <text x="50" y="78" text-anchor="middle" font-size="9" fill="#a78bfa" font-family="sans-serif">Edge Cache</text>
+            </g>
+
+            <!-- S3 (Acima do CloudFront) -->
+            <g transform="translate(420, 30)">
+              <rect width="90" height="70" rx="10" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+              <text x="45" y="35" text-anchor="middle" font-size="22">🪣</text>
+              <text x="45" y="55" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif">S3 Bucket</text>
+            </g>
+
+            <!-- Lambda (Abaixo do CloudFront) -->
+            <g transform="translate(420, 230)">
+              <rect width="90" height="70" rx="10" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+              <text x="45" y="35" text-anchor="middle" font-size="22">λ</text>
+              <text x="45" y="55" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif">Lambda</text>
+            </g>
+
+            <!-- Setas Conectoras -->
+            <path d="M 95,165 L 135,165" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
+            <path d="M 225,165 L 265,165" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
+            <path d="M 375,145 L 415,80" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
+            <path d="M 375,185 L 415,250" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
+
+          </svg>
+
+          <div style="margin-top: 20px; color: #9dbec4; font-size: 0.85rem; text-align: center; font-family: sans-serif; line-height: 1.4;">
+            <span style="color: #a78bfa; font-weight: bold;">ℹ IaC:</span> Toda a infraestrutura é gerenciada via <strong>Terraform</strong>, garantindo segurança e reprodutibilidade na AWS.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="section fade-up" id="certs">
+      <div class="inner">
+        <span class="section-label">Certifications</span>
+        <h2>Credenciais e Percurso de Aprendizagem</h2>
+
+        <div class="cert-cards">
+          <div class="cert-card">
+            <h4>Bacharel em Sistemas de Informação</h4>
+            <p><span class="check">✔</span> UNINOVE — Formação TI (4 anos).</p>
+          </div>
+          <div class="cert-card">
+            <h4>Cloud Specialist em Formação</h4>
+            <p><span class="prog">▣</span> Escola da Nuvem — Especialização prática em Cloud AWS.</p>
+          </div>
+        </div>
+
+        <div class="stepper">
+          <!-- PASSO 1 -->
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <div class="step-label">Sistemas de Informação</div>
+              <div class="step-sub ok">✔ Bacharelado concluído</div>
+            </div>
+          </div>
+
+          <!-- PASSO 2 -->
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <div class="step-label">ERP Totvs Protheus</div>
+              <div class="step-sub ok">✔ Conhecimentos em automação de sistemas e processos</div>
+            </div>
+          </div>
+
+          <!-- PASSO 3 -->
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <div class="step-label">Escola da Nuvem</div>
+              <div class="step-sub wip">▣ Especialização em Cloud AWS</div>
+            </div>
+          </div>
+
+          <!-- PASSO 4 -->
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <div class="step-label">Certificação AWS</div>
+              <div class="step-sub">☐ Em preparação intensiva para o exame CLF-C02</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINHA DE ESTATÍSTICAS -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-num">4</div>
+            <div class="stat-label">Anos de Graduação</div>
+            <div class="stat-sub">Sistemas de Informação</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Foco em Cloud</div>
+            <div class="stat-sub">Escola da Nuvem & AWS</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">AWS</div>
+            <div class="stat-label">Certificação</div>
+            <div class="stat-sub">Cloud Practitioner - Em andamento</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section fade-up" id="contact">
+      <div class="inner">
+        <div class="contact-wrap">
+          <span class="section-label" style="text-align:center">Contact</span>
+          <h2>Vamos nos conectar?</h2>
+          <p>Estou me especializando em Cloud Security pela Escola da Nuvem e focada em aprender cada vez mais. Se você tiver uma vaga de Junior ou quiser trocar uma ideia sobre nuvem, é só me chamar!</p>
+          <div class="contact-links">
+            <div class="contact-link-item">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg> Email</h4>
+              <p>vanderlansantos1991@gmail.com</p>
+            </div>
+            <div class="contact-link-item">
+              <h4>🔗 LinkedIn</h4>
+              <p>linkedin.com/in/isadoravanderlan</p>
+            </div>
+            <div class="contact-link-item">
+              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+                Portfolio</h4>
+              <p>https://github.com/IsadoraVanderlan</p>
+            </div>
+          </div>
+          <a href="https://www.linkedin.com/in/isadoravanderlan/" target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; gap: 8px; text-decoration: none;">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+            LinkedIn
+          </a>
+          <a href="curriculo - ISADORA VANDERLAN.pdf" target="_blank" class="btn-outline" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; gap: 8px; text-decoration: none; border: 1px solid #a78bfa; color: #fff; border-radius: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Currículo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer style="width: 100%; text-align: center; margin-top: 20px; padding: 20px 0; border-top: 1px solid rgba(167, 139, 250, 0.3);">
+    <p style="color: #a78bfa; font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 500;">
+      &copy; 2026 Isadora Vanderlan - Todos os direitos reservados.
+    </p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+  </script>
+</body>
+
+</html>
