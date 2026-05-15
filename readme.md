@@ -14,6 +14,8 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ### <br>
 
+---
+
 ## 🔗 Link do Site
 
 <p align="left">
