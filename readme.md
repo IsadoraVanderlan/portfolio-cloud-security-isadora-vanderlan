@@ -27,7 +27,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 </p>
 
 <p align="left">
-    <img src="video.gif" alt="Site Portfólio Cloud Security"/>
+    <img src="site-gif.gif" alt="Site Portfólio Cloud Security"/>
   </a>
 </p>
 
