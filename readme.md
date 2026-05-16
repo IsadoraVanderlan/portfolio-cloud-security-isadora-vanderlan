@@ -23,7 +23,7 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 # 🔗 Link para o Site no AWS CloudFront
 
 <p align="left">
-  <a href="dlj4pdyu1fq4u.cloudfront.net" target="_blank">Clique aqui para acessar o site</a>
+  <a href="https://dlj4pdyu1fq4u.cloudfront.net" target="_blank">Clique aqui para acessar o site</a>
 </p>
 
 <p align="left">
