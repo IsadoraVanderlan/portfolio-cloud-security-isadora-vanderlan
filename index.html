@@ -794,6 +794,9 @@
 
       .btn-primary,
       .btn-outline {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
         width: 100% !important;
         max-width: 260px !important;
         padding: 14px 0 !important;
@@ -855,7 +858,7 @@
             </svg>
             Connect on LinkedIn
           </a>
-          <a href="#arch" class="btn-outline">View Projects</a>
+          <a href="#watson" class="btn-outline">View Projects</a>
         </div>
       </div>
     </div>
@@ -875,6 +878,13 @@
             </div>
           </div>
           <div class="skill-item">
+            <div class="skill-icon">🔒</div>
+            <div>
+              <h3>Segurança na nuvem</h3>
+              <p>Políticas de IAM, grupos de segurança, criptografia em repouso e em trânsito, e design de arquitetura com foco em conformidade.</p>
+            </div>
+          </div>
+          <div class="skill-item">
             <div class="skill-icon">🤖</div>
             <div>
               <h3>Automação de Segurança (SecOps)</h3>
@@ -886,13 +896,6 @@
             <div>
               <h3>Infraestrutura como código</h3>
               <p>Terraform e AWS CloudFormation para provisionamento e gerenciamento de infraestrutura declarativa e com controle de versão.</p>
-            </div>
-          </div>
-          <div class="skill-item">
-            <div class="skill-icon">🔒</div>
-            <div>
-              <h3>Segurança na nuvem</h3>
-              <p>Políticas de IAM, grupos de segurança, criptografia em repouso e em trânsito, e design de arquitetura com foco em conformidade.</p>
             </div>
           </div>
         </div>
@@ -908,10 +911,11 @@
         <div class="feature-tags">
 
           <!-- Projeto 1: site-->
-          <div class="feature-tag" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+          <a href="https://github.com/IsadoraVanderlan/portfolio-cloud-security-isadora-vanderlan" target="_blank" class="feature-tag" style="display: flex; justify-content: space-between; align-items: center; width: 100%; text-decoration: none; color: inherit;">
             <div><span>🌐</span> Hospedagem Segura no AWS CloudFront</div>
             <small style="color: #00ff88; font-weight: bold; font-size: 12px; white-space: nowrap; margin-left: 15px; letter-spacing: 0.5px;">[ PRONTO ]</small>
-          </div>
+          </a>
+
 
           <!-- Projeto IAM Privilégio Mínimo -->
           <div class="feature-tag" style="display: flex; justify-content: space-between; align-items: center; width: 100%; opacity: 0.7;">

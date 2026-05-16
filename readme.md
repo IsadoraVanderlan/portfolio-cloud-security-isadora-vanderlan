@@ -61,24 +61,13 @@ Usuário ➔ DNS Route 53 ➔ Edge Security (AWS Shield & AWS WAF) ➔ AWS Cloud
 ### 1. Proteção do Armazenamento (Amazon S3)
 
 - **Bloqueio de Acesso Público (BPA):** Ativado globalmente no bucket para evitar vazamento de dados acidental.
-- **Criptografia em Repouso:** Implementada criptografia Server-Side (SSE-S3) com chaves gerenciadas.
-- **Versionamento de Objetos:** Ativado para proteção contra exclusões acidentais ou ataques de ransomware.
 - **Acesso Privado Restrito:** O acesso direto ao bucket via HTTP é totalmente bloqueado. O conteúdo só é acessível através do CloudFront.
+- **Versionamento de Objetos:** Ativado para proteção contra exclusões acidentais.
 
 ### 2. Entrega Segura de Conteúdo (AWS CloudFront)
 
 - **Origin Access Control (OAC):** Configurado para que o CloudFront assine digitalmente as requisições enviadas ao S3, garantindo que o bucket só responda à CDN.
 - **Políticas de Segurança TLS:** Configurado para aceitar apenas conexões seguras via HTTPS (TLS 1.2/1.3).
-- **Security Headers (Políticas de Resposta):** Implementação de cabeçalhos de segurança estritos para mitigar ataques comuns de web:
-  - `Strict-Transport-Security` (HSTS)
-  - `Content-Security-Policy` (CSP)
-  - `X-Frame-Options` (Prevenção de Clickjacking)
-  - `X-Content-Type-Options` (Prevenção de MIME-sniffing)
-
-### 3. Governança, Auditoria e Logs (AWS CloudTrail & S3 Server Access Logs)
-
-- **Trilha de Auditoria (CloudTrail):** Ativado para registrar todas as chamadas de API na conta AWS, monitorando criações, alterações e deleções de recursos.
-- **Logs de Acesso do CloudFront:** Direcionados para um bucket de logs dedicado e isolado para análise de tráfego malicioso.
 
 <br>
 
@@ -95,8 +84,8 @@ Usuário ➔ DNS Route 53 ➔ Edge Security (AWS Shield & AWS WAF) ➔ AWS Cloud
 # 🎨 Interface e Front-end
 
 - **Desenvolvimento Nativo:** Construído com HTML5 estrutural e CSS3 puro (Flexbox/Grid), sem uso de frameworks pesados para otimização de performance.
-- **Design Responsivo:** Layout fluido e adaptável para múltiplos dispositivos e tamanhos de tela utilizando funções modernas de CSS como `clamp()`.
-- **Identidade Visual:** Interface moderna com estética Glassmorphism, efeitos fluídos de profundidade e tipografia otimizada digitalmente.
+- **Design Responsivo:** Layout fluido e adaptável para múltiplos dispositivos e tamanhos de tela.
+- **Identidade Visual:** Interface moderna, efeitos fluídos de profundidade e tipografia otimizada digitalmente.
 
 <br>
 
