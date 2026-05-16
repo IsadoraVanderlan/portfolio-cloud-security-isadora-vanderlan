@@ -20,11 +20,11 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ---
 
-# 🔗 Link do Site
+# 🔗 Link do Site no AWS CloudFront
 
 <p align="left">
   <a href="site-gif.gif" target="_blank">
-    <img src="URL_DO_SEU_GIF.gif" alt="Site Portfólio Cloud Security" style="border: 2px solid #30363d; border-radius: 6px;" />
+    <img src="dlj4pdyu1fq4u.cloudfront.net" alt="Site Portfólio Cloud Security" style="border: 2px solid #30363d; border-radius: 6px;" />
   </a>
 </p>
 
@@ -79,43 +79,9 @@ Usuário ➔ DNS Route 53 ➔ Edge Security (AWS Shield & AWS WAF) ➔ AWS Cloud
 
 ---
 
-# 📜 Evidências e Políticas IAM
-
-Selecione as abas abaixo para visualizar as configurações técnicas aplicadas no projeto.
-
-<details>
-<summary>🔑 Bucket Policy do S3 (Restrita ao CloudFront OAC)</summary>
-
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "AllowCloudFrontServicePrincipalReadOnly",
-      "Effect": "Allow",
-      "Principal": {
-        "Service": "://amazonaws.com"
-      },
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::NOME-DO-SEU-BUCKET/*",
-      "Condition": {
-        "StringEquals": {
-          "AWS:SourceArn": "arn:aws:cloudfront::SUA-CONTA-ID:distribution/SUA-DISTRIBUICAO-ID"
-        }
-      }
-    }
-  ]
-}
-```
-
-</details>
-
-<details>
-<summary>📊 Auditoria do AWS CloudTrail</summary>
+# 📊 Auditoria do AWS CloudTrail
 
 ![CloudTrail Event](cloudtrail.png)
-
-</details>
 
 <br>
 
@@ -131,7 +97,7 @@ Selecione as abas abaixo para visualizar as configurações técnicas aplicadas 
 
 ---
 
-# 📬 Contato e Redes Sociais
+# 📬 Meu Contato
 
-- **LinkedIn:** [Seu Nome Completo](https://linkedin.com)
+- **LinkedIn:** [Isadora Vanderlan](https://www.linkedin.com/in/isadoravanderlan/)
 - **E-mail:** vanderlansantos1991@gmail.com
