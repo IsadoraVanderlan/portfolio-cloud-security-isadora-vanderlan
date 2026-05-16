@@ -20,11 +20,11 @@ O projeto foi estruturado com uma navegação fluida e divide-se nas seguintes s
 
 ---
 
-# 🔗 Link do Site no AWS CloudFront
+# 🔗 Link para o Site no AWS CloudFront
 
 <p align="left">
-  <a href="site-gif.gif" target="_blank">
-    <img src="dlj4pdyu1fq4u.cloudfront.net" alt="Site Portfólio Cloud Security" style="border: 2px solid #30363d; border-radius: 6px;" />
+  <a href="dlj4pdyu1fq4u.cloudfront.net" target="_blank">
+    <img src="video.gif" alt="Site Portfólio Cloud Security" width="600" style="border: 2px solid #30363d; border-radius: 6px;" />
   </a>
 </p>
 
