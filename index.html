@@ -906,35 +906,41 @@
         <h2>Meus Projetos</h2>
         <p class="section-desc">Laboratório pessoal <strong style="color:var(--purple-light);font-weight:600"> de Cloud Security: documentação de estudos e automações para segurança na AWS, explorando desde a gestão de identidades até o monitoramento proativo de recursos.</p>
         <div class="feature-tags">
-          <!-- Projeto 1: O principal-->
-          <div class="feature-tag">
-            <span>🌐</span>
-            <strong>Hospedagem Segura no AWS CloudFront <small style="color: #00ff88; margin-left: 5px;">[PRONTO]</small></strong>
+
+          <!-- Projeto 1: site-->
+          <div class="feature-tag" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div><span>🌐</span> Hospedagem Segura no AWS CloudFront</div>
+            <small style="color: #00ff88; font-weight: bold; font-size: 12px; white-space: nowrap; margin-left: 15px; letter-spacing: 0.5px;">[ PRONTO ]</small>
           </div>
 
-          <!-- Projeto: Próximos passos -->
-          <div class="feature-tag" style="opacity: 0.75;">
-            <span>🔍</span>
-            <strong>Monitoramento e Logs (CloudWatch/CloudTrail)</strong>
-            <small style="color: #e0ec9b; margin-left: 5px;">[ EM BREVE ]</small>
+          <!-- Projeto IAM Privilégio Mínimo -->
+          <div class="feature-tag" style="display: flex; justify-content: space-between; align-items: center; width: 100%; opacity: 0.7;">
+            <div><span>🔑</span> IAM Privilégio Mínimo</div>
+            <small style="color: #d4c07d; font-weight: bold; font-size: 11px; white-space: nowrap; margin-left: 15px; letter-spacing: 0.5px;">[ EM-BREVE ]</small>
           </div>
 
-          <!-- Projeto: Próximos passos -->
-          <div class="feature-tag" style="opacity: 0.75;">
-            <span>🐚</span>
-            <strong>Programação em Shell (Bash) <small style="color: var(--purple-light); margin-left: 5px;">[EM BREVE]</small></strong>
+          <!-- Projetos Monitoramento-->
+          <div class="feature-tag" style="display: flex; justify-content: space-between; align-items: center; width: 100%; opacity: 0.7;">
+            <div><span>🔍</span> Monitoramento e Logs (CloudWatch/CloudTrail)</div>
+            <small style="color: #d4c07d; font-weight: bold; font-size: 11px; white-space: nowrap; margin-left: 15px; letter-spacing: 0.5px;">[ EM-BREVE ]</small>
           </div>
 
-          <!-- Projeto: Próximos passos -->
-          <div class="feature-tag" style="opacity: 0.75;">
-            <span>🐍</span>
-            <strong>Automação com Python (Boto3) <small style="color: var(--purple-light); margin-left: 5px;">[EM BREVE]</small></strong>
+          <!-- Projeto Shell -->
+          <div class="feature-tag" style="display: flex; justify-content: space-between; align-items: center; width: 100%; opacity: 0.7;">
+            <div><span>🐚</span> Programação em Shell (Bash)</div>
+            <small style="color: #d4c07d; font-weight: bold; font-size: 11px; white-space: nowrap; margin-left: 15px; letter-spacing: 0.5px;">[ EM-BREVE ]</small>
           </div>
 
-          <!-- Projeto: Próximos passos -->
-          <div class="feature-tag" style="opacity: 0.75;">
-            <span>🏗️</span>
-            <strong>Infraestrutura como Código (CloudFormation) <small style="color: var(--purple-light); margin-left: 5px;">[EM BREVE]</small></strong>
+          <!-- Projeto Automação Python-->
+          <div class="feature-tag" style="display: flex; justify-content: space-between; align-items: center; width: 100%; opacity: 0.7;">
+            <div><span>🐍</span> Automação com Python (Boto3)</div>
+            <small style="color: #d4c07d; font-weight: bold; font-size: 11px; white-space: nowrap; margin-left: 15px; letter-spacing: 0.5px;">[ EM-BREVE ]</small>
+          </div>
+
+          <!-- Projeto CloudFront -->
+          <div class="feature-tag" style="display: flex; justify-content: space-between; align-items: center; width: 100%; opacity: 0.7;">
+            <div><span>🏗️</span> Infraestrutura como Código (CloudFormation)</div>
+            <small style="color: #d4c07d; font-weight: bold; font-size: 11px; white-space: nowrap; margin-left: 15px; letter-spacing: 0.5px;">[ EM-BREVE ]</small>
           </div>
         </div>
       </div>
@@ -947,213 +953,233 @@
         <h2>Arquitetura do Projeto</h2>
         <p class="section-desc">Este diagrama representa a estrutura profissional que sustenta meu portfólio na AWS. Utilizo Terraform para garantir que toda essa infraestrutura seja criada de forma organizada, segura e fácil de replicar.</p>
 
-        <div class="arch-diagram" style="width: 100%; max-width: 800px; margin: 0 auto; background: rgba(20, 15, 35, 0.4); padding: 30px; border-radius: 20px; border: 1px solid rgba(167, 139, 250, 0.2);">
-          <svg viewBox="0 0 600 350" xmlns="http://w3.org" style="width: 100%; height: auto;">
+        <div class="arch-diagram" style="width: 100%; max-width: 950px; margin: 0 auto; background: rgba(20, 15, 35, 0.4); padding: 30px; border-radius: 20px; border: 1px solid rgba(167, 139, 250, 0.2);">
 
-            <!-- Definição da Seta (Marcador) -->
-            <defs>
-              <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
-                <path d="M0,0 L10,5 L0,10 Z" fill="rgba(167, 139, 250, 0.6)" />
-              </marker>
-            </defs>
+          <!-- Container de rolagem para o celular sem quebrar o rodapé -->
+          <div style="width: 100%; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; -ms-overflow-style: none;">
+            <style>
+              /* Garante que a barra feia suma no Chrome e Safari, mas o arrastar continue funcionando */
+              .arch-diagram div::-webkit-scrollbar {
+                display: none;
+              }
+            </style>
 
-            <!-- USER -->
-            <g transform="translate(10, 130)">
-              <rect width="80" height="70" rx="12" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
-              <text x="40" y="35" text-anchor="middle" font-size="25">💻</text>
-              <text x="40" y="58" text-anchor="middle" font-size="11" fill="#fff" font-family="sans-serif">User</text>
-            </g>
+            <svg viewBox="0 0 830 180" xmlns="http://w3.org" style="width: 100%; min-width: 830px; height: auto; display: block; margin: 0 auto;">
 
-            <!-- Route 53 -->
-            <g transform="translate(140, 130)">
-              <circle cx="40" cy="35" r="35" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
-              <text x="40" y="32" text-anchor="middle" font-size="22">🌐</text>
-              <text x="40" y="55" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif" font-weight="bold">Route 53</text>
-            </g>
+              <!-- Definição da Seta (Marcador) -->
+              <defs>
+                <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+                  <path d="M0,0 L8,4 L0,8 Z" fill="rgba(167, 139, 250, 0.6)" />
+                </marker>
+              </defs>
 
-            <!-- CloudFront (O Centro) -->
-            <g transform="translate(270, 120)">
-              <rect width="100" height="90" rx="15" fill="rgba(139, 92, 246, 0.25)" stroke="#a78bfa" stroke-width="2" />
-              <text x="50" y="40" text-anchor="middle" font-size="28">☁️</text>
-              <text x="50" y="65" text-anchor="middle" font-size="11" fill="#fff" font-family="sans-serif" font-weight="bold">CloudFront</text>
-              <text x="50" y="78" text-anchor="middle" font-size="9" fill="#a78bfa" font-family="sans-serif">Edge Cache</text>
-            </g>
+              <!-- 1. USER -->
+              <g transform="translate(10, 55)">
+                <rect width="100" height="70" rx="12" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+                <text x="50" y="32" text-anchor="middle" font-size="24">💻</text>
+                <text x="50" y="55" text-anchor="middle" font-size="11" fill="#fff" font-family="sans-serif">User</text>
+              </g>
 
-            <!-- S3 (Acima do CloudFront) -->
-            <g transform="translate(420, 30)">
-              <rect width="90" height="70" rx="10" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
-              <text x="45" y="35" text-anchor="middle" font-size="22">🪣</text>
-              <text x="45" y="55" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif">S3 Bucket</text>
-            </g>
+              <!-- Conector 1 -> 2 -->
+              <path d="M 110,90 L 140,90" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
 
-            <!-- Lambda (Abaixo do CloudFront) -->
-            <g transform="translate(420, 230)">
-              <rect width="90" height="70" rx="10" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
-              <text x="45" y="35" text-anchor="middle" font-size="22">λ</text>
-              <text x="45" y="55" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif">Lambda</text>
-            </g>
+              <!-- 2. AWS WAF -->
+              <g transform="translate(150, 55)">
+                <rect width="100" height="70" rx="12" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+                <text x="50" y="32" text-anchor="middle" font-size="24">🔥</text>
+                <text x="50" y="55" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif" font-weight="bold">AWS WAF</text>
+              </g>
 
-            <!-- Setas Conectoras -->
-            <path d="M 95,165 L 135,165" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
-            <path d="M 225,165 L 265,165" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
-            <path d="M 375,145 L 415,80" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
-            <path d="M 375,185 L 415,250" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
+              <!-- Conector 2 -> 3 -->
+              <path d="M 250,90 L 280,90" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
 
-          </svg>
+              <!-- 3. AWS SHIELD -->
+              <g transform="translate(290, 55)">
+                <rect width="100" height="70" rx="12" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+                <text x="50" y="32" text-anchor="middle" font-size="24">🛡️</text>
+                <text x="50" y="55" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif" font-weight="bold">AWS Shield</text>
+              </g>
 
-          <div style="margin-top: 20px; color: #9dbec4; font-size: 0.85rem; text-align: center; font-family: sans-serif; line-height: 1.4;">
-            <span style="color: #a78bfa; font-weight: bold;">ℹ IaC:</span> Toda a infraestrutura é gerenciada via <strong>Terraform</strong>, garantindo segurança e reprodutibilidade na AWS.
-          </div>
-        </div>
+              <!-- Conector 3 -> 4 -->
+              <path d="M 390,90 L 420,90" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
 
-      </div>
-    </div>
+              <!-- 4. CLOUDFRONT -->
+              <g transform="translate(430, 55)">
+                <rect width="100" height="70" rx="12" fill="rgba(139, 92, 246, 0.25)" stroke="#a78bfa" stroke-width="2" />
+                <text x="50" y="35" text-anchor="middle" font-size="24">☁️</text>
+                <text x="50" y="55" text-anchor="middle" font-size="11" fill="#fff" font-family="sans-serif" font-weight="bold">CloudFront</text>
+              </g>
 
-    <!-- CERTIFICATIONS -->
-    <div class="section fade-up" id="certs">
-      <div class="inner">
-        <span class="section-label">Certifications</span>
-        <h2>Credenciais e Percurso de Aprendizagem</h2>
+              <!-- Conector 4 -> 5 -->
+              <path d="M 530,90 L 560,90" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
 
-        <div class="cert-cards">
-          <div class="cert-card">
-            <h4>Bacharel em Sistemas de Informação</h4>
-            <p><span class="check">✔</span> UNINOVE — Formação TI (4 anos).</p>
-          </div>
-          <div class="cert-card">
-            <h4>Cloud Specialist em Formação</h4>
-            <p><span class="prog">▣</span> Escola da Nuvem — Especialização prática em Cloud AWS.</p>
-          </div>
-        </div>
+              <!-- 5. AWS OAC -->
+              <g transform="translate(570, 55)">
+                <rect width="100" height="70" rx="12" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+                <text x="50" y="32" text-anchor="middle" font-size="22">🔐</text>
+                <text x="50" y="55" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif" font-weight="bold">AWS OAC</text>
+              </g>
 
-        <div class="stepper">
-          <!-- PASSO 1 -->
-          <div class="step">
-            <div class="step-num">1</div>
-            <div>
-              <div class="step-label">Sistemas de Informação</div>
-              <div class="step-sub ok">✔ Bacharelado concluído</div>
-            </div>
-          </div>
+              <!-- Conector 5 -> 6 -->
+              <path d="M 670,90 L 700,90" stroke="#a78bfa" stroke-dasharray="4" marker-end="url(#arrow)" fill="none" />
 
-          <!-- PASSO 2 -->
-          <div class="step">
-            <div class="step-num">2</div>
-            <div>
-              <div class="step-label">ERP Totvs Protheus</div>
-              <div class="step-sub ok">✔ Conhecimentos em automação de sistemas e processos</div>
-            </div>
-          </div>
+              <!-- 6. AMAZON S3 -->
+              <g transform="translate(710, 55)">
+                <rect width="100" height="70" rx="12" fill="rgba(139, 92, 246, 0.1)" stroke="#a78bfa" stroke-width="1.5" />
+                <text x="50" y="32" text-anchor="middle" font-size="22">🪣</text>
+                <text x="50" y="47" text-anchor="middle" font-size="10" fill="#fff" font-family="sans-serif" font-weight="bold">S3 Bucket</text>
+                <text x="50" y="59" text-anchor="middle" font-size="9" fill="#00ff88" font-family="sans-serif">-> SITE</text>
+              </g>
 
-          <!-- PASSO 3 -->
-          <div class="step">
-            <div class="step-num">3</div>
-            <div>
-              <div class="step-label">Escola da Nuvem</div>
-              <div class="step-sub wip">▣ Especialização em Cloud AWS</div>
-            </div>
-          </div>
-
-          <!-- PASSO 4 -->
-          <div class="step">
-            <div class="step-num">4</div>
-            <div>
-              <div class="step-label">Certificação AWS</div>
-              <div class="step-sub">☐ Em preparação intensiva para o exame CLF-C02</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- LINHA DE ESTATÍSTICAS -->
-        <div class="stats-row">
-          <div class="stat-card">
-            <div class="stat-num">4</div>
-            <div class="stat-label">Anos de Graduação</div>
-            <div class="stat-sub">Sistemas de Informação</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Foco em Cloud</div>
-            <div class="stat-sub">Escola da Nuvem & AWS</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-num">AWS</div>
-            <div class="stat-label">Certificação</div>
-            <div class="stat-sub">Cloud Practitioner - Em andamento</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CONTACT -->
-    <div class="section fade-up" id="contact">
-      <div class="inner">
-        <div class="contact-wrap">
-          <span class="section-label" style="text-align:center">Contact</span>
-          <h2>Vamos nos conectar?</h2>
-          <p>Estou me especializando em Cloud Security pela Escola da Nuvem e focada em aprender cada vez mais. Se você tiver uma vaga de Junior ou quiser trocar uma ideia sobre nuvem, é só me chamar!</p>
-          <div class="contact-links">
-            <div class="contact-link-item">
-              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg> Email</h4>
-              <p>vanderlansantos1991@gmail.com</p>
-              <a class="contact-link-item" href="https://www.linkedin.com/in/isadoravanderlan/">
-                <h4>🔗 LinkedIn</h4>
-                <p>linkedin.com/in/isadoravanderlan</p>
-              </a>
-            </div>
-            <div class="contact-link-item">
-              <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
-                Portfolio</h4>
-              <p>https://github.com/IsadoraVanderlan</p>
-            </div>
-          </div>
-          <a href="https://www.linkedin.com/in/isadoravanderlan/" target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; gap: 8px; text-decoration: none;">
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-              <rect x="2" y="9" width="4" height="12" />
-              <circle cx="4" cy="4" r="2" />
             </svg>
-            LinkedIn
-          </a>
-          <a href="curriculo - ISADORA VANDERLAN.pdf" target="_blank" class="btn-outline" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; gap: 8px; text-decoration: none; border: 1px solid #a78bfa; color: #fff; border-radius: 8px;">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="7 10 12 15 17 10"></polyline>
-              <line x1="12" y1="15" x2="12" y2="3"></line>
-            </svg>
-            Currículo
-          </a>
+          </div> <!-- Fecha a área de rolagem isolando o gráfico do texto abaixo -->
+
+          <!-- Texto do Rodapé centralizado de ponta a ponta na linha correta -->
+          <div style="margin-top: 25px; color: #9dbec4; font-size: 0.85rem; text-align: center; font-family: sans-serif; line-height: 1.4; width: 100%; display: block; clear: both;">
+            <span style="color: #a78bfa; font-weight: bold;">🛡️ Cloud Security:</span> Infraestrutura implantada seguindo os pilares de segurança do <strong>AWS Well-Architected Framework</strong> e diretrizes do <strong>CIS Benchmarks</strong>.
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <footer style="width: 100%; text-align: center; margin-top: 20px; padding: 20px 0; border-top: 1px solid rgba(167, 139, 250, 0.3);">
-    <p style="color: #a78bfa; font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 500;">
-      &copy; 2026 Isadora Vanderlan - Todos os direitos reservados.
-    </p>
-  </footer>
+      <!-- CERTIFICATIONS -->
+      <div class="section fade-up" id="certs">
+        <div class="inner">
+          <span class="section-label">Certifications</span>
+          <h2>Credenciais e Percurso de Aprendizagem</h2>
 
-  <script>
-    function toggleNav() {
-      document.getElementById('navLinks').classList.toggle('open');
-    }
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
-    });
+          <div class="cert-cards">
+            <div class="cert-card">
+              <h4>Bacharel em Sistemas de Informação</h4>
+              <p><span class="check">✔</span> UNINOVE — Formação TI (4 anos).</p>
+            </div>
+            <div class="cert-card">
+              <h4>Cloud Specialist em Formação</h4>
+              <p><span class="prog">▣</span> Escola da Nuvem — Especialização prática em Cloud AWS.</p>
+            </div>
+          </div>
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-      });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
-  </script>
+          <div class="stepper">
+            <!-- PASSO 1 -->
+            <div class="step">
+              <div class="step-num">1</div>
+              <div>
+                <div class="step-label">Sistemas de Informação</div>
+                <div class="step-sub ok">✔ Bacharelado concluído</div>
+              </div>
+            </div>
+
+            <!-- PASSO 2 -->
+            <div class="step">
+              <div class="step-num">2</div>
+              <div>
+                <div class="step-label">ERP Totvs Protheus</div>
+                <div class="step-sub ok">✔ Conhecimentos em automação de sistemas e processos</div>
+              </div>
+            </div>
+
+            <!-- PASSO 3 -->
+            <div class="step">
+              <div class="step-num">3</div>
+              <div>
+                <div class="step-label">Escola da Nuvem</div>
+                <div class="step-sub wip">▣ Especialização em Cloud AWS</div>
+              </div>
+            </div>
+
+            <!-- PASSO 4 -->
+            <div class="step">
+              <div class="step-num">4</div>
+              <div>
+                <div class="step-label">Certificação AWS</div>
+                <div class="step-sub">☐ Em preparação intensiva para o exame CLF-C02</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LINHA DE ESTATÍSTICAS -->
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-num">4</div>
+              <div class="stat-label">Anos de Graduação</div>
+              <div class="stat-sub">Sistemas de Informação</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Foco em Cloud</div>
+              <div class="stat-sub">Escola da Nuvem & AWS</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">AWS</div>
+              <div class="stat-label">Certificação</div>
+              <div class="stat-sub">Cloud Practitioner - Em andamento</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="section fade-up" id="contact">
+        <div class="inner">
+          <div class="contact-wrap"><span class="section-label" style="text-align: center; display: block;">Contact</span>
+            <h2 style="text-align: center;">Vamos nos conectar?</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px auto;">Estou me especializando em Cloud Security pela Escola da Nuvem e focada em aprender cada vez mais. Se você tiver uma vaga de Junior ou quiser trocar uma ideia sobre nuvem, é só me chamar!</p>
+
+            <div class="contact-links" style="display: flex; justify-content: center; gap: 40px; text-align: center;">
+              <!-- Item 1: Email -->
+              <div class="contact-link-item">
+                <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>Email</h4>
+                <p>vanderlansantos1991@gmail.com</p>
+
+              </div><!-- Item 3: Portfolio -->
+              <div class="contact-link-item">
+                <h4><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>Portfolio</h4>
+                <p>github.com/IsadoraVanderlan</p>
+              </div>
+
+            </div><!-- Botões Linkedin -->
+            <div style="margin-top: 30px; display: flex; gap: 15px; justify-content: center;"><a href="https://www.linkedin.com/in/isadoravanderlan/" target="_blank" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; gap: 8px; text-decoration: none;"><svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>LinkedIn</a>
+
+              <!-- Botões Curricolo -->
+              <a href="curriculo - ISADORA VANDERLAN.pdf" target="_blank" class="btn-outline" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; gap: 8px; text-decoration: none; border: 1px solid #a78bfa; color: #fff; border-radius: 8px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>Currículo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer style="width: 100%; text-align: center; margin-top: 20px; padding: 15px 0; border-top: 1px solid rgba(167, 139, 250, 0.3); position: relative; z-index: 10; float: left; clear: both;">
+        <p style="color: #a78bfa; font-family: 'Outfit', sans-serif; font-size: 0.8rem; font-weight: 500; margin: 0; padding: 0;">
+          &copy; 2026 Isadora Vanderlan - Todos os direitos reservados.
+        </p>
+      </footer>
+
+      <script>
+        function toggleNav() {
+          document.getElementById('navLinks').classList.toggle('open');
+        }
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+        });
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.08 });
+        document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+      </script>
 </body>
 
 </html>
